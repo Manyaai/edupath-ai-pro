@@ -1,55 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
-document.getElementById("debug").innerText = "JS Loaded";
-  
+
 const form = document.getElementById("form");
 
-if (!form) {
-console.error("Form not found");
-return;
-}
-
-form.addEventListener("submit", function(e) {
+form.addEventListener("submit", function(e){
 e.preventDefault();
 
-try {
-
-const interest = document.getElementById("interest").value;
-const style = document.getElementById("style").value;
-const risk = document.getElementById("risk").value;
-
-if (!interest || !style || !risk) {
-alert("Please fill all fields");
-return;
-}
-
-const data = { interest, style, risk };
-
-if (typeof generateCareers !== "function") {
-alert("Engine not loaded properly");
-return;
-}
+const data = {
+interest: document.getElementById("interest").value,
+style: document.getElementById("style").value,
+risk: document.getElementById("risk").value
+};
 
 const careers = generateCareers(data);
 
-if (!careers || careers.length === 0) {
-alert("No career results generated");
-return;
-}
-
 const report = {
 data,
-careers,
-date: new Date().toLocaleString()
+careers
 };
 
 localStorage.setItem("latest", JSON.stringify(report));
 
 window.location.href = "report.html";
-
-} catch (err) {
-console.error(err);
-alert("Something broke. Check console.");
-}
 
 });
 
