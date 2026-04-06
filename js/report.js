@@ -1,26 +1,29 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const container = document.getElementById("report");
 
 const raw = localStorage.getItem("latest");
 
 if (!raw) {
-container.innerHTML = "<h2>No data found. Go back.</h2>";
-throw new Error("No report data");
+container.innerHTML = "<h2>No data found</h2>";
+return;
 }
 
 const r = JSON.parse(raw);
 
-let html = `<h1>Your Career Blueprint</h1>`;
+let html = `<h1>Your Career Results</h1>`;
 
-r.careers.forEach((c,i)=>{
+r.careers.forEach(c=>{
 html += `
-<div class="card">
-<h2>#${i+1} ${c.name}</h2>
+<div>
+<h2>${c.name}</h2>
 <p>${c.description}</p>
-<p><b>Salary:</b> ${c.salary}</p>
-<p><b>Growth:</b> ${c.growth}</p>
+<p>Salary: ${c.salary}</p>
 </div>
 `;
 });
 
 container.innerHTML = html;
+
+});
 
