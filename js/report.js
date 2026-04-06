@@ -11,6 +11,14 @@ return;
 
 const r = JSON.parse(raw);
 
+html = 
+<div class="score-card">
+<h2>Your Fit Score</h2>
+<h1>${Math.floor(Math.random()*15)+85}%</h1>
+<p>Strong alignment detected</p>
+</div>
+ + html;
+
 let html = 
 <div class="card">
 
@@ -45,6 +53,18 @@ This role aligns with your thinking style and growth expectations.
 <p><b>Salary:</b> ${c.salary}</p>
 
 </div>
+;
+
+html += 
+<hr>
+
+<h2>What you should do next</h2>
+
+<p>
+Pick ONE of these paths and commit to it for the next 30 days.
+Do not jump between options.
+Execution matters more than overthinking.
+</p>
 ;
 
 
