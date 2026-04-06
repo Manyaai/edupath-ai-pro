@@ -11,6 +11,28 @@ color: white;
 min-height: 100vh;
 }
 
+body::before {
+content: "";
+position: fixed;
+top: -200px;
+left: -200px;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 70%);
+z-index: 0;
+}
+
+body::after {
+content: "";
+position: fixed;
+bottom: -200px;
+right: -200px;
+width: 600px;
+height: 600px;
+background: radial-gradient(circle, rgba(59,130,246,0.25), transparent 70%);
+z-index: 0;
+}
+
 /* NAV */
 .nav {
 display: flex;
