@@ -1,24 +1,32 @@
-```javascript id="app001"}
-form.onsubmit=(e)=>{
+document.addEventListener("DOMContentLoaded", () => {
+
+const form = document.getElementById("form");
+
+form.addEventListener("submit", (e) => {
 e.preventDefault();
 
-let data={
-interest:interest.value,
-style:style.value,
-risk:risk.value
+const data = {
+interest: document.getElementById("interest").value,
+style: document.getElementById("style").value,
+risk: document.getElementById("risk").value
 };
 
-let careers=generateCareers(data);
+const careers = generateCareers(data);
 
-let report={data,careers,date:new Date().toLocaleString()};
+const report = {
+data,
+careers,
+date: new Date().toLocaleString()
+};
 
 saveReport(report);
-localStorage.setItem("latest",JSON.stringify(report));
+localStorage.setItem("latest", JSON.stringify(report));
 
-location.href="report.html";
-};
+window.location.href = "report.html";
+});
+
+});
 
 function goDashboard(){
-location.href="dashboard.html";
+window.location.href = "dashboard.html";
 }
-```
