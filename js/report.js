@@ -31,19 +31,20 @@ ${r.data.style.toLowerCase()} thinking and long-term consistency.
 <h2>Your Top Matches</h2>
 ;
 
-let html = <h1>Your Career Results</h1>;
-
-r.careers.forEach(c=>{
 html += 
-<div>
-<h2>${c.name}</h2>
+<div class="career-block">
+
+<h3>${c.name}</h3>
+
 <p>${c.description}</p>
-<p>Salary: ${c.salary}</p>
+
+<p><b>Why this fits you:</b><br>
+This role aligns with your thinking style and growth expectations.
+</p>
+
+<p><b>Salary:</b> ${c.salary}</p>
+
 </div>
 ;
-});
 
-container.innerHTML = html;
-
-});
 
