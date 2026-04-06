@@ -1,4 +1,4 @@
-```javascript id="bot001"}
+id="bot001"}
 function askBot(){
 let input=chatInput.value.toLowerCase();
 let r=JSON.parse(localStorage.getItem("latest"));
@@ -10,4 +10,4 @@ else{
 chatOutput.innerText="Focus on your roadmap and skills.";
 }
 }
-```
+
