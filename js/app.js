@@ -2,29 +2,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const form = document.getElementById("form");
 
-form.addEventListener("submit", (e) => {
+if (!form) {
+console.error("Form not found");
+return;
+}
+
+form.addEventListener("submit", function(e) {
 e.preventDefault();
 
-const data = {
-interest: document.getElementById("interest").value,
-style: document.getElementById("style").value,
-risk: document.getElementById("risk").value
-};
+try {
 
-const loading = document.createElement("div");
-loading.className = "loading-screen";
-loading.innerHTML = `
-<div class="loader">
-<h2>Analyzing your profile...</h2>
-<p>Mapping skills • Evaluating careers • Building roadmap</p>
-</div>
-`;
+const interest = document.getElementById("interest").value;
+const style = document.getElementById("style").value;
+const risk = document.getElementById("risk").value;
 
-document.body.appendChild(loading);
+if (!interest || !style || !risk) {
+alert("Please fill all fields");
+return;
+}
 
-setTimeout(() => {
+const data = { interest, style, risk };
+
+if (typeof generateCareers !== "function") {
+alert("Engine not loaded properly");
+return;
+}
 
 const careers = generateCareers(data);
+
+if (!careers || careers.length === 0) {
+alert("No career results generated");
+return;
+}
 
 const report = {
 data,
@@ -32,15 +41,20 @@ careers,
 date: new Date().toLocaleString()
 };
 
-saveReport(report);
 localStorage.setItem("latest", JSON.stringify(report));
 
 window.location.href = "report.html";
 
-}, 2000);
+} catch (err) {
+console.error(err);
+alert("Something broke. Check console.");
+}
+
+});
 
 });
 
 function goDashboard(){
 window.location.href = "dashboard.html";
 }
+
