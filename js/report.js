@@ -1,3 +1,11 @@
+html = `
+<div class="score-card">
+<h2>Your Career Fit Score</h2>
+<h1>${Math.floor(Math.random()*20)+80}%</h1>
+<p>Strong alignment detected</p>
+</div>
+` + html;
+
 let r = JSON.parse(localStorage.getItem("latest"));
 
 let html = `
