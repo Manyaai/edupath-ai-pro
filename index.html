@@ -1,69 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>PathFinder AI</title>
-
+<title>PathFinder</title>
 <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="nav">
-  <div class="logo" onclick="location.href='index.html'">PathFinder</div>
-  <button onclick="goDashboard()" class="nav-btn">Dashboard</button>
-</header>
+<h1>PathFinder</h1>
 
-<section class="hero">
-  <h1>Stop guessing your career.</h1>
-  <p>Start understanding it.</p>
-  <p id="debug"></p>
-</section>
+<form id="form">
 
-<div class="container">
+<select id="interest">
+<option>Technology</option>
+<option>Creative</option>
+<option>Business</option>
+<option>Healthcare</option>
+</select>
 
-  <div class="card">
+<select id="style">
+<option>Analytical</option>
+<option>Creative</option>
+</select>
 
-    <form id="form">
+<select id="risk">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
 
-      <label>Interest Area</label>
-      <select id="interest">
-        <option>Technology</option>
-        <option>Business</option>
-        <option>Creative</option>
-        <option>Healthcare</option>
-      </select>
+<button type="submit">Generate</button>
 
-      <label>Work Style</label>
-      <select id="style">
-        <option>Analytical</option>
-        <option>Creative</option>
-        <option>People-Oriented</option>
-        <option>Hands-On</option>
-      </select>
-
-      <label>Risk Appetite</label>
-      <select id="risk">
-        <option>Low</option>
-        <option>Medium</option>
-        <option>High</option>
-      </select>
-
-      <button type="submit">Generate My Career Blueprint</button>
-
-    </form>
-
-  </div>
-
-</div>
+</form>
 
 <script src="data/careers.js"></script>
 <script src="js/engine.js"></script>
-<script src="js/storage.js"></script>
 <script src="js/app.js"></script>
 
 </body>
