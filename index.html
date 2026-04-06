@@ -1,18 +1,22 @@
-```html id="idx001"}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>PathFinder AI</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="nav glass">
-  <div class="logo" onclick="location.reload()">PathFinder</div>
-  <button onclick="goDashboard()">Dashboard</button>
+<header class="nav">
+  <div class="logo" onclick="location.href='index.html'">PathFinder</div>
+  <button onclick="goDashboard()" class="nav-btn">Dashboard</button>
 </header>
 
 <section class="hero">
@@ -20,38 +24,40 @@
   <p>Start understanding it.</p>
 </section>
 
-  
-```html id="htmlfix"
-<div class="card">
+<div class="container">
 
-<form id="form">
+  <div class="card">
 
-<label>Interest Area</label>
-<select id="interest">
-<option>Technology</option>
-<option>Business</option>
-<option>Creative</option>
-<option>Healthcare</option>
-</select>
+    <form id="form">
 
-<label>Work Style</label>
-<select id="style">
-<option>Analytical</option>
-<option>Creative</option>
-<option>People-Oriented</option>
-<option>Hands-On</option>
-</select>
+      <label>Interest Area</label>
+      <select id="interest">
+        <option>Technology</option>
+        <option>Business</option>
+        <option>Creative</option>
+        <option>Healthcare</option>
+      </select>
 
-<label>Risk Appetite</label>
-<select id="risk">
-<option>Low</option>
-<option>Medium</option>
-<option>High</option>
-</select>
+      <label>Work Style</label>
+      <select id="style">
+        <option>Analytical</option>
+        <option>Creative</option>
+        <option>People-Oriented</option>
+        <option>Hands-On</option>
+      </select>
 
-<button>Generate My Career Blueprint</button>
+      <label>Risk Appetite</label>
+      <select id="risk">
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
 
-</form>
+      <button type="submit">Generate My Career Blueprint</button>
+
+    </form>
+
+  </div>
 
 </div>
 
@@ -62,4 +68,4 @@
 
 </body>
 </html>
-```
+
