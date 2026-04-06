@@ -1,0 +1,62 @@
+```html id="idx001"}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PathFinder AI</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="nav glass">
+  <div class="logo" onclick="location.reload()">PathFinder</div>
+  <button onclick="goDashboard()">Dashboard</button>
+</header>
+
+<section class="hero">
+  <h1>Stop guessing your career.</h1>
+  <p>Start understanding it.</p>
+</section>
+
+<div class="card glass">
+
+<form id="form">
+
+<label>Interest Area</label>
+<select id="interest">
+<option>Technology</option>
+<option>Business</option>
+<option>Creative</option>
+<option>Healthcare</option>
+</select>
+
+<label>Work Style</label>
+<select id="style">
+<option>Analytical</option>
+<option>Creative</option>
+<option>People-Oriented</option>
+<option>Hands-On</option>
+</select>
+
+<label>Risk Appetite</label>
+<select id="risk">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+
+<button>Generate My Career Blueprint</button>
+
+</form>
+
+</div>
+
+<script src="data/careers.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+```
