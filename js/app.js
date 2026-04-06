@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+document.getElementById("debug").innerText = "JS Loaded";
+  
 const form = document.getElementById("form");
 
 if (!form) {
